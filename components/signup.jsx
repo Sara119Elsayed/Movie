@@ -1,14 +1,23 @@
 "use client";
 import React, { memo } from "react";
+import { useRouter } from "next/navigation";
 import "bootstrap/dist/css/bootstrap.css";
 
 function Signup() {
+  const router = useRouter();
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    // Add signup logic here (e.g., form validation, API call)
+    router.push("/login");
+  };
+
   return (
-    <div className="container mt-5">
-      <div className="card shadow-lg p-4 rounded-4">
+    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+      <div className="card shadow p-4 rounded-4" style={{ maxWidth: "400px", width: "100%" }}>
         <div className="card-body">
-          <h3 className="card-title text-center mb-4 text-dark fw-bold">Sign Up</h3>
-          <form className="form-group">
+          <h2 className="text-center mb-4 text-dark fw-bold">Sign Up</h2>
+          <form onSubmit={handleSignup}>
             <div className="mb-3">
               <label htmlFor="username" className="form-label">Username</label>
               <input
@@ -17,6 +26,7 @@ function Signup() {
                 name="username"
                 placeholder="Enter your username"
                 className="form-control rounded-3"
+                required
               />
             </div>
             <div className="mb-3">
@@ -27,6 +37,7 @@ function Signup() {
                 name="email"
                 placeholder="Enter your email"
                 className="form-control rounded-3"
+                required
               />
             </div>
             <div className="mb-4">
@@ -37,9 +48,12 @@ function Signup() {
                 name="password"
                 placeholder="Enter your password"
                 className="form-control rounded-3"
+                required
               />
             </div>
-            <button type="submit" className="btn btn-dark w-100 rounded-3">Sign Up</button>
+            <button type="submit" className="btn btn-dark w-100 rounded-3">
+              Sign Up
+            </button>
           </form>
         </div>
       </div>
