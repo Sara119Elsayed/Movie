@@ -5,6 +5,7 @@ A movie management web application that allows users to browse movies, view thei
 ## 🌐 Live Demo
 
 [View MoviesApp](https://movie-lovat-psi.vercel.app/movie)
+[LinkedIN Demo MoviesApp](https://lnkd.in/p/dwfCmkeJhttps://lnkd.in/p/dwfCmkeJ)
 
 ## ✨ Features
 
